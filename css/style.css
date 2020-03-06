@@ -5,11 +5,19 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
 /* Reset Code */
+hr {
+    border: none;
+    height: 1px;
+    /* Set the hr color */
+    color: rgb(124, 124, 124); /* old IE */
+    background-color: rgb(124, 124, 124); /* Modern Browsers */
+}
+
 body {
     padding: 0;
     margin: 0;
     background: #FFF;
-    font-family: vazir, sans-serif;
+    font-family: vazir;
 }
 
 body a,
@@ -52,17 +60,16 @@ h5,
 h6 {
     margin: 0;
     padding: 0;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: vazir;
 }
 
 p {
     margin: 0;
     padding: 0;
     font-size: 16px;
-    letter-spacing: 1px;
     line-height: 1.9;
     color: #999;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: vazir;
 }
 
 ul,
@@ -93,7 +100,7 @@ a:hover {
 }
 
 .let {
-    letter-spacing: 1px;
+    /* letter-spacing: 1px; */
 }
 
 /* //colors code */
@@ -116,7 +123,7 @@ a.move-top {
 
 /* banner */
 .banner-top1 {
-    background: url(../images/1.jpg) no-repeat top;
+    background: url(../images/11.jpg) no-repeat top;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -127,13 +134,45 @@ a.move-top {
     z-index: 1;
 }
 
+.banner-panel {
+    display: inline-block;
+    border-radius: 15px;
+    padding: 64px;
+    background-color: rgba(0 ,0 ,0 , 0.3);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);  
+}
+
 .banner-text {
-    padding-top: 14em;
+    padding-top: 5em;
+}
+
+.hi-text1 {
+    text-align: right;
+}
+
+.hi-text2 {
+    text-align: left;
+}
+
+.user {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border: 5px solid white;
+}
+  
+.user-image {
+    background-image: url('../images/user1.jpg');
 }
 
 a.logo {
     font-size: 52px;
-    letter-spacing: 9px;
 }
 
 .banner-text h3 {
@@ -168,7 +207,7 @@ a.logo {
     color: #fff;
     font-size: 14px;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    /* letter-spacing: 3px; */
     -webkit-border-radius: 0px;
     -o-border-radius: 0px;
     -ms-border-radius: 0px;
@@ -337,7 +376,7 @@ p.foot-para {
 }
 
 .cpy-right p {
-    letter-spacing: 2px;
+    /* letter-spacing: 2px; */
     border-color: rgba(255, 255, 255, 0.42) !important;
     padding-top: 2em;
     color: #e0e0e0;
@@ -375,7 +414,7 @@ h3.tittle {
     color: #000;
     border: 1px solid #dadada;
     font-size: 16px;
-    letter-spacing: 1px;
+    /* letter-spacing: 1px; */
     -webkit-border-radius: 0px;
     -o-border-radius: 0px;
     -ms-border-radius: 0px;
@@ -392,7 +431,7 @@ h3.tittle {
     background: #33cc99;
     padding: 15px 50px;
     font-size: 16px;
-    letter-spacing: 2px;
+    /* letter-spacing: 2px; */
     color: #fff;
     text-transform: uppercase;
     font-weight: 600;
@@ -418,7 +457,7 @@ h3.tittle {
     font-size: 22px;
     font-weight: 600;
     color: #000;
-    letter-spacing: 1px;
+    /* letter-spacing: 1px; */
 }
 
 .abt-block p {
@@ -551,7 +590,7 @@ h3.tittle-2 {
     position: absolute;
     transform: rotate(-90deg);
     left: 0;
-    letter-spacing: 8px;
+    /* letter-spacing: 8px; */
     top: 40%;
 }
 
@@ -559,7 +598,7 @@ h4.about-tit {
     font-size: 50px;
     color: #333;
     font-weight: 700;
-    letter-spacing: 2px;
+    /* letter-spacing: 2px; */
     font-style: italic;
 }
 
@@ -568,7 +607,7 @@ h4.about-tit {
     color: #000;
     font-size: 14px;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    /* letter-spacing: 3px; */
     border-radius: 0px;
     -webkit-border-radius: 0px;
     -o-border-radius: 0px;
@@ -604,7 +643,7 @@ h4.about-tit {
 
 .welcome-grid h4 {
     font-size: 23px;
-    letter-spacing: .5px;
+    /* letter-spacing: .5px; */
 }
 
 /* //about bottom */
@@ -627,7 +666,7 @@ p.counter {
 
 p.para-text-w3ls {
     text-transform: uppercase;
-    letter-spacing: 2px;
+    /* letter-spacing: 2px; */
 }
 
 /* //stats */
@@ -642,12 +681,12 @@ p.para-text-w3ls {
     font-size: 26px;
     color: #333;
     font-weight: 600;
-    letter-spacing: 1px;
+    /* letter-spacing: 1px; */
 }
 
 .inner-w3pvt-wrap h6 {
     font-size: 18px;
-    letter-spacing: 1px;
+    /* letter-spacing: 1px; */
     color: #555;
     font-style: italic;
     font-family: initial;
@@ -674,7 +713,7 @@ p.para-text-w3ls {
     border: 1px solid rgba(12, 12, 12, 0.11);
     margin: 0 10px;
     font-size: 16px;
-    letter-spacing: 1px;
+    /* letter-spacing: 1px; */
 }
 
 .tab-main span {
@@ -827,7 +866,7 @@ a.blog-title {
     text-transform: uppercase;
     font-size: 12px;
     word-spacing: 3px;
-    letter-spacing: 1px;
+    /* letter-spacing: 1px; */
     display: block;
 }
 
@@ -850,7 +889,7 @@ a.blog-title {
 
 .testi_grid h5 {
     font-size: 20px;
-    letter-spacing: 1px;
+    /* letter-spacing: 1px; */
     color: #fff;
     font-weight: 800;
     margin: 3px 0 0 15px;
@@ -1043,7 +1082,7 @@ p.sub-test {
 @media(max-width: 736px) {
     a.logo {
         font-size: 46px;
-        letter-spacing: 6px;
+        /* letter-spacing: 6px; */
     }
 
     .banner-text.text-center p {
@@ -1119,7 +1158,7 @@ p.sub-test {
 
     a.logo {
         font-size: 40px;
-        letter-spacing: 4px;
+        /* letter-spacing: 4px; */
     }
 
     .banner-text.text-center p {
@@ -1267,7 +1306,7 @@ p.sub-test {
 
     h4.about-tit {
         font-size: 32px;
-        letter-spacing: 1px;
+        /* letter-spacing: 1px; */
     }
 
     .abt-block h3 {
