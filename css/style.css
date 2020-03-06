@@ -162,7 +162,7 @@ a.move-top {
     border-radius: 50%;
   
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: -1px -31px;
     background-size: cover;
     border: 5px solid white;
 }
