@@ -1377,4 +1377,15 @@ p.sub-test {
     }
 }
 
+.aparat-icon{
+    width: 36px;
+    height: 26px;
+    padding-bottom: 4px;
+}
+
+.email-icon{
+    width: 36px;
+    height: 25px;
+    padding-bottom: 4px;
+}
 /* //responsive */
