@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8" />
 	<meta name="keywords" content="وب سایت شخصی محمد پوشش" />
+	<link rel="shortcut icon" type="image/png" href="images/avatar.jpg">
 	<script>
 		addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);
@@ -29,6 +30,7 @@
 	</style>
 	<!--font-->
 	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/spider-animate.css">
 	<!-- Bootstrap-Core-CSS -->
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
 	<!-- Style-CSS -->
@@ -122,6 +124,7 @@
 		  }
 		}
 		</style>
+		
 </head>
 
 <body>
@@ -129,10 +132,11 @@
 	<div id="home">
 		<!-- banner -->
 		<div class="banner_w3lspvt">
-			<div class="banner-top1">
-				<div class="container">
+			<div class="banner-top1" >
+				<div id="particles-js"></div>
+				<div class="container container-style">
 					<div class="banner-text text-center">
-						<div class="banner-panel">
+						<div class="banner-panel" >
 							<div class="user user-image" id="myImg">
 							</div>
 						<p class="text-bl text-li mt-3 hi-text1">سلام </p>
@@ -165,6 +169,7 @@
 							</ul>
 						</div>
 					</div>
+					<div style="text-align:center;padding:1em 0;"><iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=fa&size=small&timezone=Asia%2FTehran" width="100%" height="90" frameborder="0" seamless></iframe> </div>
 					</div>
 				</div>
 			</div>
@@ -196,6 +201,12 @@
 		span.onclick = function() { 
 		  modal.style.display = "none";
 		}
+		</script>
+		<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js">
+		</script>
+		<script src="https://threejs.org/examples/js/libs/stats.min.js">
+		</script>
+		<script src="js/spider-animate.js">
 		</script>
 </body>
 
