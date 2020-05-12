@@ -191,7 +191,7 @@ a.logo {
 }
 
 .banner-text.text-center p {
-    font-size: 19px;
+    /* font-size: 19px; */
     font-weight: 200;
     max-width: 700px;
     margin: 0 auto;
