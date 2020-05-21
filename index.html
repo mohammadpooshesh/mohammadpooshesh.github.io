@@ -180,10 +180,10 @@
 	<!-- The Modal -->
 	<div id="myModal" class="modal">
 		<span class="close">&times;</span>
-		<img class="modal-content" id="img01">
+		<img class="modal-content" id="img01" style="cursor: zoom-out;">
 	</div>
 	<script>
-		// Get the modal
+        // Get the modal
 		var modal = document.getElementById("myModal");
 		
 		// Get the image and insert it inside the modal - use its "alt" text as a caption
@@ -197,7 +197,10 @@
 		// Get the <span> element that closes the modal
 		var span = document.getElementsByClassName("close")[0];
 		
-		// When the user clicks on <span> (x), close the modal
+		// When the user clicks on <span> (x) and image, close the modal
+		document.getElementById('img01').onclick = function() { 
+		  modal.style.display = "none";
+		}
 		span.onclick = function() { 
 		  modal.style.display = "none";
 		}

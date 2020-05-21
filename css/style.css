@@ -173,6 +173,7 @@ a.move-top {
   
 .user-image {
     background-image: url('../images/user2.jpg');
+    cursor:zoom-in;
 }
 
 a.logo {
