@@ -64,6 +64,7 @@
     "AI Engineer \u2014 GeoAI",
     "RAG \u00b7 Knowledge Graphs \u00b7 MCP",
     "Building AI that understands maps",
+    "GeoLab \u00b7 GeoForge \u2014 GIS in the browser",
     "PostGIS is my happy place"
   ];
   var typedEl = document.getElementById("typed");
@@ -168,6 +169,7 @@
       N("cv", "Vision", "cv", 16), N("data", "Data", "data", 16), N("ops", "Ops", "ops", 16),
       N("rag", "RAG", "ai", 10), N("kgs", "Knowledge Graphs", "ai", 10), N("mcp", "MCP", "ai", 10), N("tools", "Agent Tools", "ai", 10),
       N("postgis", "PostGIS", "geo", 10), N("geoserver", "GeoServer", "geo", 10), N("tiles", "Map Tiles", "geo", 10),
+      N("geolab", "GeoLab", "geo", 12), N("geoforge", "GeoForge", "geo", 12),
       N("py", "Python", "be", 10), N("dj", "Django", "be", 10), N("ca", "Clean Arch", "be", 10),
       N("cvx", "OpenCV", "cv", 10), N("yolo", "YOLO", "cv", 10), N("rpi", "Raspberry Pi", "cv", 10),
       N("pg", "PostgreSQL", "data", 10), N("mongo", "MongoDB", "data", 10), N("redis", "Redis", "data", 10),
@@ -177,6 +179,7 @@
       ["m", "ai"], ["m", "geo"], ["m", "be"], ["m", "cv"], ["m", "data"], ["m", "ops"],
       ["ai", "rag"], ["ai", "kgs"], ["ai", "mcp"], ["ai", "tools"],
       ["geo", "postgis"], ["geo", "geoserver"], ["geo", "tiles"],
+      ["geo", "geolab"], ["geo", "geoforge"], ["geolab", "geoforge"],
       ["be", "py"], ["be", "dj"], ["be", "ca"],
       ["cv", "cvx"], ["cv", "yolo"], ["cv", "rpi"],
       ["data", "pg"], ["data", "mongo"], ["data", "redis"],
@@ -312,6 +315,18 @@
   /* ============ projects ============ */
   var PROJECTS = [
     {
+      name: "GeoLab", repo: "mohammadpooshesh/GeoLab", featured: true,
+      icon: iconSvg('<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96L12 12.01l8.73-5.05"/><path d="M12 22.08V12"/>', "#5e9fe8"),
+      desc: "Interactive GIS geometry laboratory \u2014 what regex101 is for regex. Draw on a real map, drag a slider, and watch ~30 geometry operations recompute and animate live, with ready-to-copy Turf.js, Shapely & PostGIS code.",
+      tags: ["React", "TypeScript", "MapLibre", "Turf.js", "Web Worker"]
+    },
+    {
+      name: "GeoForge", repo: "mohammadpooshesh/GeoForge", featured: true,
+      icon: iconSvg('<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>', "#4fb9c9"),
+      desc: "The VS Code for GeoJSON \u2014 a browser IDE where a Monaco editor, MapLibre map and feature explorer stay in real-time bidirectional sync. 20+ geometry tools, live validation, smooth at 50,000+ features.",
+      tags: ["React", "TypeScript", "Monaco", "MapLibre", "Turf.js"]
+    },
+    {
       name: "karnama", repo: "mohammadpooshesh/karnama",
       icon: iconSvg('<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>', "#5e9fe8"),
       desc: "Time tracker \u2014 cross-platform desktop app built with Flutter.",
@@ -334,7 +349,7 @@
   if (cardsEl) {
     PROJECTS.forEach(function (p) {
       var a = document.createElement("a");
-      a.className = "card reveal";
+      a.className = "card reveal" + (p.featured ? " featured" : "");
       a.href = "https://github.com/" + p.repo;
       a.target = "_blank";
       a.rel = "noopener";
@@ -343,10 +358,17 @@
       var pin = document.createElement("span");
       pin.className = "pin";
       pin.innerHTML = p.icon;
+      pinRow.appendChild(pin);
+      if (p.featured) {
+        var flag = document.createElement("span");
+        flag.className = "flag";
+        flag.textContent = "FEATURED";
+        pinRow.appendChild(flag);
+      }
       var stars = document.createElement("span");
       stars.className = "stars";
       stars.dataset.repo = p.repo;
-      pinRow.appendChild(pin); pinRow.appendChild(stars);
+      pinRow.appendChild(stars);
       var h3 = document.createElement("h3");
       h3.textContent = p.name;
       var desc = document.createElement("p");
