@@ -282,7 +282,7 @@ body {
 .pipe-wrap svg { width: 100%; height: auto; display: block; }
 
 /* ---------- projects ---------- */
-.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
+.cards { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; margin-top: 24px; }
 .card {
   background: var(--surface);
   border: 1px solid var(--border-soft);
@@ -293,8 +293,9 @@ body {
   gap: 12px;
   text-decoration: none;
   color: var(--text);
-  transition: transform .15s, border-color .15s;
+  transition: transform .15s, border-color .15s, box-shadow .15s;
   position: relative;
+  grid-column: span 2;
 }
 .card:hover { transform: translateY(-3px); border-color: var(--accent); }
 .card .pin-row { display: flex; align-items: center; justify-content: space-between; }
@@ -309,6 +310,34 @@ body {
 .card p { color: var(--text-2); font-size: 14px; flex: 1; }
 .card .tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .card .visit { font-family: var(--mono); font-size: 12.5px; color: var(--accent); }
+.card.featured {
+  grid-column: span 3;
+  padding: 26px;
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--surface), var(--surface)) padding-box,
+    linear-gradient(135deg, rgba(94, 159, 232, 0.75), rgba(79, 185, 201, 0.45), rgba(191, 142, 218, 0.6)) border-box;
+}
+.card.featured:hover {
+  border-color: transparent;
+  box-shadow: 0 8px 28px rgba(94, 159, 232, 0.18);
+}
+.card.featured h3 { font-size: 20px; }
+.card.featured p { font-size: 14.5px; }
+.card.featured .pin svg { width: 30px; height: 30px; }
+.card .flag {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid rgba(94, 159, 232, 0.4);
+  border-radius: 999px;
+  padding: 3px 10px;
+  margin-left: 10px;
+  margin-right: auto;
+}
 
 /* ---------- activity feed ---------- */
 .feed { list-style: none; margin-top: 24px; display: grid; gap: 8px; }
@@ -369,6 +398,7 @@ body {
 /* ---------- responsive ---------- */
 @media (max-width: 860px) {
   .cards { grid-template-columns: 1fr; }
+  .card, .card.featured { grid-column: auto; }
   .nav { padding: 10px 16px; }
   .nav-links a { padding: 8px 8px; font-size: 13px; }
   .coords { display: none; }
