@@ -240,6 +240,7 @@ body {
   justify-content: center;
 }
 .layer .eye:hover { border-color: var(--accent); }
+.layer .eye svg { width: 15px; height: 15px; display: block; }
 .layer .swatch { width: 12px; height: 12px; border-radius: 3px; flex: none; }
 .layer .lname {
   font-family: var(--mono);
@@ -269,6 +270,17 @@ body {
 }
 #kg { width: 100%; height: 520px; display: block; cursor: grab; touch-action: none; }
 
+/* ---------- pipeline ---------- */
+.pipe-wrap {
+  margin-top: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  padding: 16px 12px 8px;
+  overflow: hidden;
+}
+.pipe-wrap svg { width: 100%; height: auto; display: block; }
+
 /* ---------- projects ---------- */
 .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
 .card {
@@ -286,7 +298,8 @@ body {
 }
 .card:hover { transform: translateY(-3px); border-color: var(--accent); }
 .card .pin-row { display: flex; align-items: center; justify-content: space-between; }
-.card .pin { font-size: 26px; }
+.card .pin { display: inline-flex; }
+.card .pin svg { width: 26px; height: 26px; display: block; }
 .card .stars {
   font-family: var(--mono);
   font-size: 12px;
