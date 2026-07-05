@@ -4,6 +4,12 @@
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  /* ============ inline icon set (feather-style) ============ */
+  var EYE_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>';
+  function iconSvg(paths, color) {
+    return '<svg viewBox="0 0 24 24" fill="none" stroke="' + color + '" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + paths + "</svg>";
+  }
+
   /* ============ hero: flowing contour lines ============ */
   var topo = document.getElementById("topo");
   if (topo) {
@@ -80,7 +86,7 @@
     })();
   }
 
-  /* ============ hero: status bar clock ============ */
+  /* ============ hero: status bar clock + LLM throughput ============ */
   var clock = document.getElementById("clock");
   function tickClock() {
     if (!clock) return;
@@ -89,6 +95,15 @@
   }
   tickClock();
   setInterval(tickClock, 1000);
+
+  var tps = document.getElementById("tps");
+  if (tps) {
+    function tickTps() {
+      tps.textContent = "LLM: " + (36 + Math.floor(Math.random() * 28)) + " tok/s";
+    }
+    tickTps();
+    setInterval(tickTps, 1600);
+  }
 
   /* ============ skill layers ============ */
   var LAYERS = [
@@ -107,7 +122,7 @@
       li.className = "layer reveal";
       var btn = document.createElement("button");
       btn.className = "eye";
-      btn.textContent = "\uD83D\uDC41";
+      btn.innerHTML = EYE_SVG;
       btn.setAttribute("aria-label", "Toggle layer " + l.name);
       btn.addEventListener("click", function () { li.classList.toggle("off"); });
       var sw = document.createElement("span");
@@ -297,17 +312,20 @@
   /* ============ projects ============ */
   var PROJECTS = [
     {
-      name: "karnama", repo: "mohammadpooshesh/karnama", pin: "\uD83D\uDD50",
+      name: "karnama", repo: "mohammadpooshesh/karnama",
+      icon: iconSvg('<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>', "#5e9fe8"),
       desc: "Time tracker \u2014 cross-platform desktop app built with Flutter.",
       tags: ["Flutter", "Desktop"]
     },
     {
-      name: "map-tile-downloader", repo: "mohammadpooshesh/map-tile-downloader", pin: "\uD83D\uDDFA",
+      name: "map-tile-downloader", repo: "mohammadpooshesh/map-tile-downloader",
+      icon: iconSvg('<path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4z"/><path d="M8 2v16"/><path d="M16 6v16"/>', "#72bc8f"),
       desc: "Docker image for downloading map tiles in PNG & MBTiles formats.",
       tags: ["Docker", "GIS", "MBTiles"]
     },
     {
-      name: "DomainHunter", repo: "mohammadpooshesh/DomainHunter", pin: "\uD83D\uDD0E",
+      name: "DomainHunter", repo: "mohammadpooshesh/DomainHunter",
+      icon: iconSvg('<circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>', "#bf8eda"),
       desc: "Professional Domain OSINT framework \u2014 collects publicly available intelligence about a domain.",
       tags: ["Python", "OSINT", "Security"]
     }
@@ -324,7 +342,7 @@
       pinRow.className = "pin-row";
       var pin = document.createElement("span");
       pin.className = "pin";
-      pin.textContent = p.pin;
+      pin.innerHTML = p.icon;
       var stars = document.createElement("span");
       stars.className = "stars";
       stars.dataset.repo = p.repo;
@@ -402,7 +420,7 @@
         if (!interesting.length) {
           var li0 = document.createElement("li");
           li0.className = "muted";
-          li0.textContent = "No recent public activity \u2014 the satellite is between passes. \uD83D\uDEF0";
+          li0.textContent = "No recent public activity \u2014 the satellite is between passes.";
           feed.appendChild(li0);
           return;
         }
