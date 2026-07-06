@@ -64,7 +64,7 @@
     "AI Engineer \u2014 GeoAI",
     "RAG \u00b7 Knowledge Graphs \u00b7 MCP",
     "Building AI that understands maps",
-    "GeoLab \u00b7 GeoForge \u2014 GIS in the browser",
+    "GeoLab \u00b7 GeoForge \u00b7 GeoExplain \u2014 GIS in the browser",
     "PostGIS is my happy place"
   ];
   var typedEl = document.getElementById("typed");
@@ -169,7 +169,7 @@
       N("cv", "Vision", "cv", 16), N("data", "Data", "data", 16), N("ops", "Ops", "ops", 16),
       N("rag", "RAG", "ai", 10), N("kgs", "Knowledge Graphs", "ai", 10), N("mcp", "MCP", "ai", 10), N("tools", "Agent Tools", "ai", 10),
       N("postgis", "PostGIS", "geo", 10), N("geoserver", "GeoServer", "geo", 10), N("tiles", "Map Tiles", "geo", 10),
-      N("geolab", "GeoLab", "geo", 12), N("geoforge", "GeoForge", "geo", 12),
+      N("geolab", "GeoLab", "geo", 12), N("geoforge", "GeoForge", "geo", 12), N("geoexplain", "GeoExplain", "geo", 12),
       N("py", "Python", "be", 10), N("dj", "Django", "be", 10), N("ca", "Clean Arch", "be", 10),
       N("cvx", "OpenCV", "cv", 10), N("yolo", "YOLO", "cv", 10), N("rpi", "Raspberry Pi", "cv", 10),
       N("pg", "PostgreSQL", "data", 10), N("mongo", "MongoDB", "data", 10), N("redis", "Redis", "data", 10),
@@ -180,6 +180,7 @@
       ["ai", "rag"], ["ai", "kgs"], ["ai", "mcp"], ["ai", "tools"],
       ["geo", "postgis"], ["geo", "geoserver"], ["geo", "tiles"],
       ["geo", "geolab"], ["geo", "geoforge"], ["geolab", "geoforge"],
+      ["geo", "geoexplain"], ["geoexplain", "postgis"],
       ["be", "py"], ["be", "dj"], ["be", "ca"],
       ["cv", "cvx"], ["cv", "yolo"], ["cv", "rpi"],
       ["data", "pg"], ["data", "mongo"], ["data", "redis"],
@@ -325,6 +326,12 @@
       icon: iconSvg('<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>', "#4fb9c9"),
       desc: "The VS Code for GeoJSON \u2014 a browser IDE where a Monaco editor, MapLibre map and feature explorer stay in real-time bidirectional sync. 20+ geometry tools, live validation, smooth at 50,000+ features.",
       tags: ["React", "TypeScript", "Monaco", "MapLibre", "Turf.js"]
+    },
+    {
+      name: "GeoExplain", repo: "mohammadpooshesh/GeoExplain", featured: true,
+      icon: iconSvg('<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>', "#bf8eda"),
+      desc: "Understand spatial SQL visually \u2014 regex101 for PostGIS. Draw a geometry, pick ST_Buffer, and watch a step-by-step animation of what it does, with live code in PostGIS, Turf.js, Shapely & GDAL.",
+      tags: ["React", "TypeScript", "SVG", "PostGIS", "Zero-deps"]
     },
     {
       name: "karnama", repo: "mohammadpooshesh/karnama",
