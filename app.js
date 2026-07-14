@@ -334,6 +334,12 @@
       tags: ["React", "TypeScript", "SVG", "PostGIS", "Zero-deps"]
     },
     {
+      name: "AI Atlas", repo: "mohammadpooshesh/ai-atlas", featured: true,
+      icon: iconSvg('◎', "#f2a154"),
+      desc: "An interactive, fully client-side 3D atlas of AI — 60 algorithms with live simulations, math, code and quizzes, in a custom WebGL engine.",
+      tags: ["JavaScript", "WebGL", "PWA", "Web Worker"]
+    },
+    {
       name: "karnama", repo: "mohammadpooshesh/karnama",
       icon: iconSvg('<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>', "#5e9fe8"),
       desc: "Time tracker \u2014 cross-platform desktop app built with Flutter.",
